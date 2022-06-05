@@ -8,7 +8,7 @@
         </div>  
         <div class="text-center">
           <p class="text-base lg:text-xl font-medium p-1 pt-4">{{ video.package_name }}</p>
-          <p class="text-base lg:text-xl p-1">Price: {{ video.price }} BDT</p>
+          <p class="text-base lg:text-xl font-medium p-1">Price: {{ video.price }} BDT</p>
           <p class="text-base lg:text-xl p-1">{{ video.cinematographer }}</p>
           <p class="text-base lg:text-xl p-1">{{ video.time }}</p>
           <div v-for="(detail, index) in video.details" :key="index">

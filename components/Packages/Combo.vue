@@ -8,7 +8,7 @@
         </div>
         <div class="text-center">
           <p class="text-base lg:text-xl font-medium p-1 pt-4">{{ combo.package_name }}</p>
-          <p class="text-base lg:text-xl p-1">Price: {{ combo.price }} BDT</p>
+          <p class="text-base lg:text-xl font-medium p-1">Price: {{ combo.price }} BDT</p>
           <p class="text-base lg:text-xl p-1">{{ combo.p_c_qty }}</p>
           <p class="text-base lg:text-xl p-1">{{ combo.time }}</p>
           <div v-for="(detail, index) in combo.details" :key="index">

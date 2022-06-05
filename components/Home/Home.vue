@@ -12,7 +12,7 @@
             <nuxt-link class="text-white" :to="'/Images'">IMAGES</nuxt-link>
           </div>
           <div>
-            <nuxt-link class="text-lg font-medium" :to="'/'"><img class="h-32 w-62" src="../../assets/images/Header/header2.png" alt="HOME"></nuxt-link>
+            <nuxt-link class="text-lg font-medium" :to="'/'"><img class="h-32 w-62" src="../../assets/images/Header/header1.png" alt="HOME"></nuxt-link>
           </div>
           <div class="pt-6">
             <nuxt-link class="text-white" :to="'/Films'">FILMS</nuxt-link>
@@ -25,7 +25,7 @@
         <!-- For Responsive Dimensions -->
         <div class="flex justify-between md:hidden">
           <div class="pl-4">
-            <nuxt-link class="text-lg font-medium" :to="'/'"><img class="h-12 w-44" src="../../assets/images/Header/header2.png" alt="HOME"></nuxt-link>
+            <nuxt-link class="text-lg font-medium" :to="'/'"><img class="h-12 w-44" src="../../assets/images/Header/header1.png" alt="HOME"></nuxt-link>
           </div>
           <div class="pr-5 pt-3">
             <div class="border-2 rounded-lg border-white bg-white">
@@ -49,7 +49,7 @@
       </div>
 
       <div class="bg-love">
-        <p class="text-2xl lg:text-3xl text-slate-200 text-center tracking-widest questions">WHAT WE LOVE ?</p>
+        <p class="text-xl md:text-2xl lg:text-3xl text-slate-200 text-center tracking-widest questions">WHAT WE LOVE ?</p>
       </div>
 
       <div class="p-12 md:p-16 xl:p-20 md:px-40 lg:px-44 xl:px-64 text-center">
@@ -64,7 +64,7 @@
     <!-- WHAT WE BELIVE? -->
     <div>
       <div class="bg-belive">
-        <p class="text-2xl lg:text-3xl text-slate-200 text-center tracking-widest questions">WHAT WE BELIVE ?</p>
+        <p class="text-xl md:text-2xl lg:text-3xl text-slate-200 text-center tracking-widest questions">WHAT WE BELIVE ?</p>
       </div>
 
       <div class="p-12 md:p-16 xl:p-20 md:px-40 lg:px-44 xl:px-64 text-center">
@@ -79,7 +79,7 @@
     <!-- WHAT WE DO? -->
     <div>
       <div class="bg-do">
-        <p class="text-2xl lg:text-3xl text-slate-200 text-center tracking-widest questions">WHAT WE DO ?</p>
+        <p class="text-xl md:text-2xl lg:text-3xl text-slate-200 text-center tracking-widest questions">WHAT WE DO ?</p>
       </div>
 
       <div class="p-12 md:p-16 xl:p-20 md:px-40 lg:px-44 xl:px-64 text-center">
@@ -136,11 +136,13 @@ export default {
 }
 .bg-love {
   background-image: url('../../assets/images/Home/2.jpg');
+  /* background-position: center; */
   position: relative;
   background-size: cover;
   background-attachment: fixed;
   background-repeat: no-repeat;
 }
+
 .bg-belive {
   background-image: url('../../assets/images/Home/3.jpg');
   position: relative;
@@ -161,20 +163,20 @@ export default {
     height: 95vh;
   }
   .questions {
-    @apply pt-48
+    @apply pt-40
   }
   .bg-love {
-    height: 40vh;
+    height: 36vh;
     margin-top: auto;
     margin-bottom: auto;
   }
   .bg-belive {
-    height: 40vh;
+    height: 36vh;
     margin-top: auto;
     margin-bottom: auto;
   }
   .bg-do {
-    height: 40vh;
+    height: 36vh;
     margin-top: auto;
     margin-bottom: auto;
   }
@@ -208,7 +210,7 @@ export default {
     height: 62vh;
   }
   .questions {
-    @apply pt-32
+    @apply pt-20
   }
   .bg-love {
     height: 25vh;
@@ -231,20 +233,20 @@ export default {
     height: 55vh;
   }
   .questions {
-    @apply pt-28
+    @apply pt-16
   }
   .bg-love {
-    height: 22vh;
+    height: 23vh;
     margin-top: auto;
     margin-bottom: auto;
   }
   .bg-belive {
-    height: 22vh;
+    height: 23vh;
     margin-top: auto;
     margin-bottom: auto;
   }
   .bg-do {
-    height: 22vh;
+    height: 23vh;
     margin-top: auto;
     margin-bottom: auto;
   }
@@ -255,22 +257,22 @@ export default {
     height: 45vh;
   }
   .questions {
-    @apply pt-24
+    @apply pt-16
   }
   .bg-love {
-    height: 20vh;
+    height: 22vh;
     background-size: contain;
     margin-top: auto;
     margin-bottom: auto;
   }
   .bg-belive {
-    height: 20vh;
+    height: 22vh;
     background-size: contain;
     margin-top: auto;
     margin-bottom: auto;
   }
   .bg-do {
-    height: 20vh;
+    height: 22vh;
     background-size: contain;
     margin-top: auto;
     margin-bottom: auto;
@@ -282,7 +284,7 @@ export default {
     height: 35vh;
   }
   .questions {
-    @apply pt-20
+    @apply pt-14
   }
   .bg-love {
     height: 20vh;
@@ -309,7 +311,7 @@ export default {
     height: 28vh;
   }
   .questions {
-    @apply pt-16
+    @apply pt-12
   }
   .bg-love {
     height: 18vh;
@@ -336,7 +338,7 @@ export default {
     height: 25vh;
   }
   .questions {
-    @apply pt-14
+    @apply pt-10
   }
   .bg-love {
     height: 15vh;

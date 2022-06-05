@@ -9,16 +9,11 @@
     </div>
 
     <!-- Loop for images -->
-    <div class="w-full h-full grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 ml-0.5 gap-3 md:gap-4 lg:gap-6 p-3 md:p-6">
-      <div v-for="(image, index) in images" :key="index">
-        <ImagePreview :src="image.img" alt="Image" preview  />
-
-        <!-- <ImagePreview :src="image.img" alt="Image">
-          <template #indicator>
-            <preview />
-          </template>
-        </ImagePreview> -->
-
+    <div class="padding-x">
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 lg:ml-1 gap-3 md:gap-4 lg:gap-6 p-3 md:p-6">
+        <div v-for="(image, index) in images" :key="index">
+          <ImagePreview :src="image.img" alt="Image" preview />
+        </div>
       </div>
     </div>
   </div>
@@ -40,3 +35,41 @@ export default {
   }
 }
 </script>
+
+<style scoped>
+@media screen and (max-width: 2000px) {
+  .padding-x {
+    @apply px-80
+  }
+}
+@media screen and (max-width: 1536px) {
+  .padding-x {
+    @apply px-60
+  }
+}
+@media screen and (max-width: 1280px) {
+  .padding-x {
+    @apply px-44
+  }
+}
+@media screen and (max-width: 1024px) {
+  .padding-x {
+    @apply px-28
+  }
+}
+@media screen and (max-width: 768px) {
+  .padding-x {
+    @apply px-20
+  }
+}
+@media screen and (max-width: 500px) {
+  .padding-x {
+    @apply px-8
+  }
+}
+@media screen and (max-width: 390px) { 
+  .padding-x {
+    @apply px-3
+  }
+}
+</style>

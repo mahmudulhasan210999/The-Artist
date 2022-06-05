@@ -26,8 +26,8 @@
                   <nuxt-link :to="{ path: '/packages/photography/' + slotProps.data.slug, params: { id: slotProps.data }}">
                     <img class="" :src="slotProps.data.img" alt="Image">
                     <div class="text-center">
-                      <p class="p-1">{{ slotProps.data.package_name }}</p>
-                      <p class="">Price: {{ slotProps.data.price }} BDT</p>
+                      <p class="p-1 font-medium">{{ slotProps.data.package_name }}</p>
+                      <p class="font-medium">Price: {{ slotProps.data.price }} BDT</p>
                     </div>
                   </nuxt-link>
                 </div>
@@ -45,8 +45,8 @@
                   <nuxt-link :to="{ path: '/packages/cinematography/' + slotProps.data.slug, params: { id: slotProps.data }}">
                     <img class="" :src="slotProps.data.img" alt="Image">
                     <div class="text-center">
-                      <p class="p-1">{{ slotProps.data.package_name }}</p>
-                      <p class="">Price: {{ slotProps.data.price }} BDT</p>
+                      <p class="p-1 font-medium">{{ slotProps.data.package_name }}</p>
+                      <p class="font-medium">Price: {{ slotProps.data.price }} BDT</p>
                     </div>
                   </nuxt-link>
                 </div>
@@ -64,8 +64,8 @@
                   <nuxt-link :to="{ path: '/packages/combo/' + slotProps.data.slug, params: { id: slotProps.data }}">
                     <img class="" :src="slotProps.data.img" alt="Image">
                     <div class="text-center">
-                      <p class="p-1">{{ slotProps.data.package_name }}</p>
-                      <p class="">Price: {{ slotProps.data.price }} BDT</p>
+                      <p class="p-1 font-medium">{{ slotProps.data.package_name }}</p>
+                      <p class="font-medium">Price: {{ slotProps.data.price }} BDT</p>
                     </div>
                   </nuxt-link>
                 </div>

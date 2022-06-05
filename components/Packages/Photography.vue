@@ -8,7 +8,7 @@
         </div>
         <div class="text-center">
           <p class="text-base lg:text-xl font-medium p-1 pt-4">{{ photo.package_name }}</p>
-          <p class="text-base lg:text-xl p-1">Price: {{ photo.price }} BDT</p>
+          <p class="text-base lg:text-xl font-medium p-1">Price: {{ photo.price }} BDT</p>
           <p class="text-base lg:text-xl p-1">{{ photo.photographer }}</p>
           <p class="text-base lg:text-xl p-1">{{ photo.time }}</p>
           <div v-for="(detail, index) in photo.details" :key="index">
