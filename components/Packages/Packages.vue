@@ -110,7 +110,7 @@
     </div>
 
     <!-- Slider for REVIEWS -->
-    <div class="packages">
+    <div class="packages mb-4">
       <Carousel :value="reviews" :numVisible="3" :numScroll="3" :responsiveOptions="responsiveOptions">
         <template #item="slotProps">
           <div class="p-3 xl:p-4 w-full h-full">

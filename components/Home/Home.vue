@@ -35,6 +35,10 @@
           </div>
         </div>
       </div>
+      <div class="w-full flex flex-col items-center text-white text-center font-sans">
+        <p class="w-60 sm:w-96 mt-96 sm:mt-80">As a professionally trained photographer and creative visual artist, my job of telling the most beautiful love stories brings me so much fulfillment and joy. I’m hard-working, yet light-hearted. I love music, movies and most of all, my adorable family.</p>
+        <p class="font-semibold">- Mohammad Rezaul Karim</p>
+      </div>
     </div>
 
     <!-- WHAT WE LOVE? -->
@@ -48,8 +52,8 @@
         <p class="border-b-2 border-gray-400 pb-4"></p>
       </div>
 
-      <div class="bg-love">
-        <p class="text-xl md:text-2xl lg:text-3xl text-slate-200 text-center tracking-widest questions">WHAT WE LOVE ?</p>
+      <div class="bg-love" v-prlx.mobile.background="{ speed: 0.08 }"> 
+        <p class="questions">WHAT WE LOVE ?</p>
       </div>
 
       <div class="p-12 md:p-16 xl:p-20 md:px-40 lg:px-44 xl:px-64 text-center">
@@ -63,8 +67,8 @@
 
     <!-- WHAT WE BELIVE? -->
     <div>
-      <div class="bg-belive">
-        <p class="text-xl md:text-2xl lg:text-3xl text-slate-200 text-center tracking-widest questions">WHAT WE BELIVE ?</p>
+      <div class="bg-belive" v-prlx.mobile.background="{ speed: 0.08 }">
+        <p class="questions">WHAT WE BELIVE ?</p>
       </div>
 
       <div class="p-12 md:p-16 xl:p-20 md:px-40 lg:px-44 xl:px-64 text-center">
@@ -78,8 +82,8 @@
 
     <!-- WHAT WE DO? -->
     <div>
-      <div class="bg-do">
-        <p class="text-xl md:text-2xl lg:text-3xl text-slate-200 text-center tracking-widest questions">WHAT WE DO ?</p>
+      <div class="bg-do" v-prlx.mobile.background="{ speed: 0.08 }">
+        <p class="questions">WHAT WE DO ?</p>
       </div>
 
       <div class="p-12 md:p-16 xl:p-20 md:px-40 lg:px-44 xl:px-64 text-center">
@@ -93,10 +97,14 @@
     </div>
   </div>
 </template>
-
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/vue-prlx/dist/v-prlx.min.js"></script>
 <script>
 import Navbar from "./nav.vue";
+import Vue from "vue"
+import VuePrlx from 'vue-prlx'
 
+Vue.use(VuePrlx);
 export default {
   data() {
     return {
@@ -118,6 +126,7 @@ export default {
 </script>
 
 <style scoped>
+
 .navbar {
   overflow: hidden;
   /* position: fixed; */
@@ -125,238 +134,178 @@ export default {
   z-index: 100;
   top: 0;
   width: 60%;
-  @apply bg-transparent
+  @apply bg-transparent;
 }
 
 .image-size {
   background-image: url('../../assets/images/Home/1.jpg');
-  position: relative;
-  background-size: cover;
   width: 100vw;
-}
-.bg-love {
-  background-image: url('../../assets/images/Home/2.jpg');
-  /* background-position: center; */
+  height: 90vh;
   position: relative;
   background-size: cover;
-  background-attachment: fixed;
-  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.bg-love {
+    width: 100%;
+    height: 36vh;
+    background: url('../../assets/images/Home/2.jpg') fixed center top no-repeat;
+    background-size: cover;
+    
 }
 
 .bg-belive {
-  background-image: url('../../assets/images/Home/3.jpg');
-  position: relative;
+  width: 100%;
+  height: 36vh;
+  background: url('../../assets/images/Home/3.jpg') fixed center top no-repeat;
   background-size: cover;
-  background-attachment: fixed;
-  background-repeat: no-repeat;
 }
+
 .bg-do {
-  background-image: url('../../assets/images/Home/4.jpg');
-  position: relative;
+  width: 100%;
+  height: 36vh;
+  background: url('../../assets/images/Home/4.jpg') fixed center top no-repeat;
   background-size: cover;
-  background-attachment: fixed;
-  background-repeat: no-repeat;
+}
+
+.questions {
+  @apply text-xl md:text-2xl lg:text-3xl text-slate-200 text-center tracking-widest;
 }
 
 @media screen and (max-width: 2000px) {
-  .image-size {
-    height: 95vh;
-  }
   .questions {
     @apply pt-40
-  }
-  .bg-love {
-    height: 36vh;
-    margin-top: auto;
-    margin-bottom: auto;
-  }
-  .bg-belive {
-    height: 36vh;
-    margin-top: auto;
-    margin-bottom: auto;
-  }
-  .bg-do {
-    height: 36vh;
-    margin-top: auto;
-    margin-bottom: auto;
   }
 }
 
 @media screen and (max-width: 1536px) {
-  .image-size {
-    height: 95vh;
-  }
   .questions {
     @apply pt-32
   }
-  .bg-love {
-    height: 36vh;
-    margin-top: auto;
-    margin-bottom: auto;
-  }
-  .bg-belive {
-    height: 36vh;
-    margin-top: auto;
-    margin-bottom: auto;
-  }
-  .bg-do {
-    height: 36vh;
-    margin-top: auto;
-    margin-bottom: auto;
-  }
 }
+
 @media screen and (max-width: 1280px) {
-  .image-size {
-    height: 62vh;
-  }
   .questions {
     @apply pt-20
   }
+
   .bg-love {
     height: 25vh;
-    margin-top: auto;
-    margin-bottom: auto;
+    background-size: cover;
   }
+
   .bg-belive {
     height: 25vh;
-    margin-top: auto;
-    margin-bottom: auto;
+    background-size: cover;
+    
   }
   .bg-do {
     height: 25vh;
-    margin-top: auto;
-    margin-bottom: auto;
+    background-size: cover;
+    
   }
 }
 @media screen and (max-width: 1024px) {
-  .image-size {
-    height: 55vh;
-  }
   .questions {
     @apply pt-16
   }
+
   .bg-love {
     height: 23vh;
-    margin-top: auto;
-    margin-bottom: auto;
+    background-size: contain;
   }
+
   .bg-belive {
     height: 23vh;
-    margin-top: auto;
-    margin-bottom: auto;
+    background-size: contain;
   }
+
   .bg-do {
     height: 23vh;
-    margin-top: auto;
-    margin-bottom: auto;
+    background-size: contain;
   }
 }
 
 @media screen and (max-width: 900px) {
-  .image-size {
-    height: 45vh;
-  }
   .questions {
     @apply pt-16
   }
   .bg-love {
     height: 22vh;
     background-size: contain;
-    margin-top: auto;
-    margin-bottom: auto;
   }
+
   .bg-belive {
     height: 22vh;
     background-size: contain;
-    margin-top: auto;
-    margin-bottom: auto;
   }
+
   .bg-do {
     height: 22vh;
     background-size: contain;
-    margin-top: auto;
-    margin-bottom: auto;
   }
 }
 
 @media screen and (max-width: 768px) {
-  .image-size {
-    height: 35vh;
-  }
   .questions {
     @apply pt-14
   }
+
   .bg-love {
     height: 20vh;
     background-size: contain;
-    margin-top: auto;
-    margin-bottom: auto;
   }
+
   .bg-belive {
     height: 20vh;
     background-size: contain;
-    margin-top: auto;
-    margin-bottom: auto;
   }
+
   .bg-do {
     height: 20vh;
     background-size: contain;
-    margin-top: auto;
-    margin-bottom: auto;
   }
 }
 
 @media screen and (max-width: 500px) {
-  .image-size {
-    height: 28vh;
-  }
   .questions {
     @apply pt-12
   }
+
   .bg-love {
     height: 18vh;
     background-size: contain;
-    margin-top: auto;
-    margin-bottom: auto;
   }
+
   .bg-belive {
     height: 18vh;
     background-size: contain;
-    margin-top: auto;
-    margin-bottom: auto;
   }
+
   .bg-do {
     height: 18vh;
     background-size: contain;
-    margin-top: auto;
-    margin-bottom: auto;
   }
 }
 
 @media screen and (max-width: 390px) {
-  .image-size {
-    height: 25vh;
-  }
   .questions {
     @apply pt-10
   }
+
   .bg-love {
     height: 15vh;
     background-size: contain;
-    margin-top: auto;
-    margin-bottom: auto;
   }
+
   .bg-belive {
     height: 15vh;
     background-size: contain;
-    margin-top: auto;
-    margin-bottom: auto;
   }
+
   .bg-do {
     height: 15vh;
     background-size: contain;
-    margin-top: auto;
-    margin-bottom: auto;
   }
 }
 </style>

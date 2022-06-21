@@ -1,6 +1,6 @@
 <template>
   <!-- details about Packages -->
-  <div class="bg-orange-50 w-full">
+  <div class="bg-orange-50 w-full pb-10">
     <div v-for="(combo, index) in combos" :key="index"> 
       <div class="text-center pt-2 all" v-if="combo.slug == slug">
         <div class="px-2 md:px-5 lg:px-8">

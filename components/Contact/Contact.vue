@@ -9,8 +9,7 @@
     </div>
 
     <!-- Mandatory details Form -->
-    <div class="px-4 md:px-32 lg:px-52 xl:px-20 pt-4">
-      <div class="md:px-32 lg:px-52 xl:px-80">
+    <div class="team-container pt-4">
         <div>
           <p class="border-b-2 border-gray-400">MANDATORY DETAILS</p>
         </div>
@@ -71,9 +70,8 @@
         </div>
 
         <div class="flex justify-center mt-5 mb-4">
-          <Button @click="submitDetails" label="Submit" class="p-button-rounded p-button-secondary w-1/4 object-center" />
+          <Button @click="submitDetails" label="Submit" class="p-button-rounded p-button-secondary w-32 sm:w-1/4 object-center" />
         </div>
-      </div>
     </div>
 
     <!-- Team members title -->
@@ -84,10 +82,10 @@
     </div>
 
     <!-- Team members list -->
-    <div class="px-4 md:px-20 lg:px-28">
-      <div class="grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 md:p-4 lg:p-12">
-        <div class="p-4 w-full h-full" v-for="(team, index) in teams" :key="index">
-          <img class="h-72 sm:h-60 md:h-60 lg:h-64 xl:h-80 2xl:h-96 w-full object-cover" :src="team.img" alt="Image" />
+    <div class="team-container mt-4 mb-10"> 
+      <div class="grid grid-cols-2 sm:grid-cols-3 2xl:grid-cols-4 gap-3 sm:gap-4">
+        <div class="h-full" v-for="(team, index) in teams" :key="index">
+          <img class="h-44 sm:h-48 md:h-52 lg:h-60 xl:h-64 2xl:h-72 w-full bg-cover" :src="team.img" alt="Image" />
           <div class="text-center p-2">
             <p class="text-slate-700">{{ team.name }}</p>
             <p class="text-sm text-slate-500">{{ team.designation }}</p>
@@ -137,3 +135,32 @@ export default {
   }
 }
 </script>
+
+<style scoped>
+@media screen and (max-width: 2000px) {
+  .team-container {
+    @apply px-80;
+  }
+}
+@media screen and (max-width: 1280px) {
+  .team-container {
+    @apply px-52;
+  }
+}
+@media screen and (max-width: 1024px) {
+  .team-container {
+    @apply px-36;
+  }
+}
+@media screen and (max-width: 768px) {
+  .team-container {
+    @apply px-20;
+  }
+}
+@media screen and (max-width: 500px) {
+  .team-container {
+    @apply px-4;
+  }
+}
+
+</style>
