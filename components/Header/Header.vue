@@ -8,8 +8,8 @@
       <div class="pt-6">
         <nuxt-link class="hover:text-red-400" :to="'/Images'">IMAGES</nuxt-link>
       </div>
-      <div>
-        <nuxt-link class="" :to="'/'"><img class="h-32 w-62" src="../../assets/images/Header/header2.png" alt="HOME"></nuxt-link>
+      <div class="flex items-center">
+        <nuxt-link class="" :to="'/'"><img class="h-20 w-52 lg:h-24 lg:w-60 xl:h-32 xl:w-80" src="../../assets/images/Header/header2.png" alt="HOME"></nuxt-link>
       </div>
       <div class="pt-6">
         <nuxt-link class="hover:text-red-400" :to="'/Films'">FILMS</nuxt-link>
@@ -22,9 +22,9 @@
     <!-- For Responsive Dimensions -->
     <div class="flex justify-between md:hidden">
       <div class="pl-4">
-        <nuxt-link class="text-lg font-medium" :to="'/'"><img class="h-12 w-44" src="../../assets/images/Header/header2.png" alt="HOME"></nuxt-link>
+        <nuxt-link class="text-lg font-medium" :to="'/'"><img class="h-16 w-44" src="../../assets/images/Header/header2.png" alt="HOME"></nuxt-link>
       </div>
-      <div class="pr-5 pt-3">
+      <div class="pr-5 flex items-center">
         <div class="border-2 rounded-lg border-white bg-white">
           <i @click="toggleNav" class="pi pi-bars p-1"></i>
           <Navbar v-if="navToggled" @navClosed="closeNav"/>

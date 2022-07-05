@@ -2,25 +2,24 @@ import axios from 'axios';
 import PAPI from './../api-path/apipath';
 
 export const state = () => ({
-  images: [],
+    teams: [],
 })
 
-export const getters = {
-  
+export const getters = { 
 }
 
 export const mutations = {
-  SET_IMAGES (state, items) {
-    state.images = items
+  SET_TEAMS (state, items) {
+    state.teams = items
   },
 }
 
 export const actions = {
-  getImages ({ commit }) {
-    axios.get(PAPI.get_image).then(result => {
+  getTeams ({ commit }) {
+    axios.get(PAPI.get_team).then(result => {
       let results = result.data
       // console.log(result.data)
-      commit('SET_IMAGES', results)
+      commit('SET_TEAMS', results)
     })
     .catch(error => {
       console.log(error)

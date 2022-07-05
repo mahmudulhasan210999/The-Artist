@@ -47,7 +47,7 @@
 
         <div class="py-2" >
           <p class="py-2">CONTACT NUMBER *</p>
-          <InputText type="number" class="w-full" placeholder="Contact Number" v-model="temp_details.c_number" />
+          <InputText type="text" class="w-full" placeholder="Contact Number" v-model="temp_details.c_number" />
         </div>
 
         <div class="py-2">
@@ -85,7 +85,7 @@
     <div class="team-container mt-4 mb-10"> 
       <div class="grid grid-cols-2 sm:grid-cols-3 2xl:grid-cols-4 gap-3 sm:gap-4">
         <div class="h-full" v-for="(team, index) in teams" :key="index">
-          <img class="h-44 sm:h-48 md:h-52 lg:h-60 xl:h-64 2xl:h-72 w-full bg-cover" :src="team.img" alt="Image" />
+          <img class="h-44 sm:h-48 md:h-52 lg:h-60 xl:h-64 2xl:h-72 w-full bg-cover" :src="host+team.img" alt="Image" />
           <div class="text-center p-2">
             <p class="text-slate-700">{{ team.name }}</p>
             <p class="text-sm text-slate-500">{{ team.designation }}</p>
@@ -97,6 +97,7 @@
 </template>
 
 <script>
+import { mapState } from "vuex";
 import InputText from 'primevue/inputtext';
 import Textarea from 'primevue/textarea';
 import Button from 'primevue/button';
@@ -110,14 +111,27 @@ export default {
 
   data() {
     return {
-      temp_details: {},
+      host: "https://theartistapi.bitflex.xyz",
+      temp_details: {
+        bf_name: '',
+        bl_name: '',
+        gf_name: '',
+        gl_name: '',
+        wedding_dates: '',
+        event_details: '',
+        vanue: '',
+        c_number: '',
+        email: '',
+        story: '',
+        thoughts: '',
+      }
     }
   },
 
   methods: {
     submitDetails() {
-      this.temp_details = {};
       this.$store.dispatch("saveDetails", this.temp_details);
+      this.temp_details = {};
     }
   },
 
@@ -126,12 +140,17 @@ export default {
   },
 
   computed: {
-    teams() {
-      return this.$store.state.teams;
-    },
+    ...mapState ({
+      teams: state => state.team.teams
+    }),
+
     mandatory_details() {
       return this.$store.state.mandatory_details;
     }
+  },
+
+  mounted() {
+    this.$store.dispatch('team/getTeams')
   }
 }
 </script>

@@ -11,19 +11,24 @@
     <!-- YouTube links for trailers -->
     <div class="md:grid md:grid-cols-2 lg:grid-cols-3 md:py-3 lg:py-4 trailers my-3">
       <div class="p-2" v-for="(film, index) in films" :key="index">
-        <iframe class="w-full md:h-40" :src="film.vid" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-      </div>
+        <iframe class="w-full md:h-40" :src="'https://www.youtube.com/embed/' + film.vid" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+      </div> 
     </div>
   </div>
 </template>
 
 <script>
+import { mapState } from "vuex";
 
 export default {
   computed: {
-    films() {
-      return this.$store.state.films;
-    }
+    ...mapState ({
+      films: state => state.film.films
+    })
+  },
+
+  mounted() {
+    this.$store.dispatch('film/getFilms')
   }
 }
 </script>

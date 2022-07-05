@@ -12,7 +12,7 @@
     <div class="padding-x">
       <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 lg:ml-1 gap-3 md:gap-4 lg:gap-6 p-3 md:p-6">
         <div v-for="(image, index) in images" :key="index">
-          <ImagePreview :src="image.img" alt="Image" preview />
+          <ImagePreview :src="host+image.img" alt="Image" preview />
         </div>
       </div>
     </div>
@@ -24,6 +24,12 @@ import ImagePreview from 'primevue/imagepreview';
 import { mapState } from "vuex";
 
 export default {
+  data() {
+    return {
+      host: "https://theartistapi.bitflex.xyz"
+    }
+  },
+
   components: {
     ImagePreview,
   },
@@ -32,6 +38,10 @@ export default {
     ...mapState ({
       images: state => state.image.images
     })
+  },
+
+  mounted() {
+    this.$store.dispatch('image/getImages')
   }
 }
 </script>

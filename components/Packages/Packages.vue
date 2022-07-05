@@ -77,24 +77,49 @@
 
       <!-- Button for TERMS AND CONDITIONS -->
       <div class="flex justify-center px-10 lg:px-52">
-        <button class="p-1 lg:p-2 text-sm lg:text-base hover:text-blue-600" @click="terms">★★ TERMS AND CONDITIONS →</button>
+        <button class="p-1 lg:p-2 text-sm lg:text-base hover:text-blue-600 flex" @click="terms">
+          <p class="text-amber-400 pr-1">★★</p>
+          <p>TERMS AND CONDITIONS</p> 
+          <p class="pl-1 font-bold">+</p>
+        </button>
       </div>
 
       <!-- TERMS AND CONDITIONS text -->
       <div v-if="termsAndConditions">
         <div class="px-4 md:px-52 pt-4">
           <div class="md:px-32 lg:px-52 xl:px-72">
-            <p class="p-2">★ 50% of total payment is required in advance for booking & the rest 50% is payable on the day of event.</p>
-            <p class="p-2">★ Booking money is non-refundable, but may reschedule under special circumstances and on availability.</p>
-            <p class="p-2">★ We strictly maintain the schedule for couple and portrait photo-shoot, so client is requested at the venue on time.</p>
-            <p class="p-2">★ After 12:00 a.m. extra charges will be added and client must provide transport facilities.</p>
-            <p class="p-2">★ Clients themselves have to select the pictures for print and song for the trailer.</p>
-            <p class="p-2">★ For outside Dhaka clients need to pay 35% extra with package price.</p>
-            <p class="p-2">★ It may takes around 4 weeks or 28 days to deliver.</p>
-            <p class="p-2">★ Clients have to collect the DVD & the prints from the office.</p>
-            <p class="p-2">★ The artist holds the right to display any photograph and video to promote the business in Facebook, advertising media, brochures, magazine articles, websites, sample albums etc.</p>
-            <p class="p-2">★ Clients will get complementary Drone for cinematography if they book GLITTER and DIAMOND.</p>
-            <p class="p-2">★ If clients hires us at least for 3 events we will offer an outdoor photo-shoot as gift.</p>
+            <p class="p-2"><i class="pi pi-arrow-circle-right pr-1" style="font-size: 12px"></i>
+            50% of total payment is required in advance for booking & the rest 50% is payable on the day of event.</p>
+
+            <p class="p-2"><i class="pi pi-arrow-circle-right pr-1" style="font-size: 12px"></i>
+            Booking money is non-refundable, but may reschedule under special circumstances and on availability.</p>
+
+            <p class="p-2"><i class="pi pi-arrow-circle-right pr-1" style="font-size: 12px"></i>
+            We strictly maintain the schedule for couple and portrait photo-shoot, so client is requested at the venue on time.</p>
+
+            <p class="p-2"><i class="pi pi-arrow-circle-right pr-1" style="font-size: 12px"></i>
+            After 12:00 a.m. extra charges will be added and client must provide transport facilities.</p>
+
+            <p class="p-2"><i class="pi pi-arrow-circle-right pr-1" style="font-size: 12px"></i>
+            Clients themselves have to select the pictures for print and song for the trailer.</p>
+
+            <p class="p-2"><i class="pi pi-arrow-circle-right pr-1" style="font-size: 12px"></i>
+            For outside Dhaka clients need to pay 35% extra with package price.</p>
+
+            <p class="p-2"><i class="pi pi-arrow-circle-right pr-1" style="font-size: 12px"></i>
+            It may takes around 4 weeks or 28 days to deliver.</p>
+
+            <p class="p-2"><i class="pi pi-arrow-circle-right pr-1" style="font-size: 12px"></i>
+            Clients have to collect the DVD & the prints from the office.</p>
+
+            <p class="p-2"><i class="pi pi-arrow-circle-right pr-1" style="font-size: 12px"></i>
+            The artist holds the right to display any photograph and video to promote the business in Facebook, advertising media, brochures, magazine articles, websites, sample albums etc.</p>
+
+            <p class="p-2"><i class="pi pi-arrow-circle-right pr-1" style="font-size: 12px"></i>
+            Clients will get complementary Drone for cinematography if they book GLITTER and DIAMOND.</p>
+
+            <p class="p-2"><i class="pi pi-arrow-circle-right pr-1" style="font-size: 12px"></i>
+            If clients hires us at least for 3 events we will offer an outdoor photo-shoot as gift.</p>
           </div>
         </div>
       </div>
@@ -114,12 +139,12 @@
       <Carousel :value="reviews" :numVisible="3" :numScroll="3" :responsiveOptions="responsiveOptions">
         <template #item="slotProps">
           <div class="p-3 xl:p-4 w-full h-full">
-            <img class="h-76 w-full" :src="slotProps.data.img" alt="">
+            <img class="h-76 w-full" :src="host + slotProps.data.img" alt="review-image">
             <div class="text-center">
-              <p class="text-xl text-slate-800 p-2">{{ slotProps.data.title }}</p>
-              <p class="text-slate-600">{{ slotProps.data.star }}</p>
+              <p class="text-xl text-slate-800 p-2">{{ slotProps.data.name }}</p>
+              <p class="text-amber-400">★★★★★</p>
               <p class="text-slate-600">{{ slotProps.data.text }}</p>
-              <p class="font-medium text-slate-700 p-1">{{ slotProps.data.sign }}</p>
+              <!-- <p class="font-medium text-slate-700 p-1">{{ slotProps.data.sign }}</p> -->
             </div>
           </div>
         </template>
@@ -145,6 +170,7 @@ export default {
 
   data() {
     return {
+      host: "https://theartistapi.bitflex.xyz",
       responsiveOptions: [
 			{
 				breakpoint: '1024px',
@@ -212,7 +238,11 @@ export default {
     ...mapState ({
       reviews: state => state.review.reviews
     }),
-  }
+  },
+
+  mounted() {
+    this.$store.dispatch('review/getReviews')
+  },
 }
 </script>
 
