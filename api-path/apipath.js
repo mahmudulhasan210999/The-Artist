@@ -9,6 +9,8 @@ const PAPI = {
     'get_film':host + '/api/videos',
     'create_contract':host + '/api/contact/create',
     'get_team':host + '/api/teams',
+    'create_contract':host+'/api/contact/create',
+    'get_home_banners':host+'/api/home/banners'
 }
 
 export default PAPI;

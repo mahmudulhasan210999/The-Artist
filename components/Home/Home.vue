@@ -1,7 +1,7 @@
 <template>
   <div class="bg-orange-50 w-full flex flex-col">
     <!-- top design with Header -->
-    <div class="w-full image-size">
+    <div class="w-full image-size" :style="{'background-image': 'url(https://theartistapi.bitflex.xyz'+banners.image1+')'}">
       <div class="w-full navbar">
         <!-- main header -->
         <div class="hidden md:flex justify-between h-36 p-2 md:mx-10 lg:mx-36 xl:mx-64">
@@ -52,7 +52,7 @@
         <p class="border-b-2 border-gray-400 pb-4"></p>
       </div>
 
-      <div class="bg-love" v-prlx.mobile.background="{ speed: 0.08 }"> 
+      <div class="bg-love" v-prlx.mobile.background="{ speed: 0.08 }" :style="{'background-image': 'url(https://theartistapi.bitflex.xyz'+banners.image2+')'}"> 
         <p class="questions">WHAT WE LOVE ?</p>
       </div>
 
@@ -67,7 +67,7 @@
 
     <!-- WHAT WE BELIVE? -->
     <div>
-      <div class="bg-belive" v-prlx.mobile.background="{ speed: 0.08 }">
+      <div class="bg-belive" v-prlx.mobile.background="{ speed: 0.08 }" :style="{'background-image': 'url(https://theartistapi.bitflex.xyz'+banners.image3+')'}">
         <p class="questions">WHAT WE BELIVE ?</p>
       </div>
 
@@ -82,7 +82,7 @@
 
     <!-- WHAT WE DO? -->
     <div>
-      <div class="bg-do" v-prlx.mobile.background="{ speed: 0.08 }">
+      <div class="bg-do" v-prlx.mobile.background="{ speed: 0.08 }" :style="{'background-image': 'url(https://theartistapi.bitflex.xyz'+banners.image4+')'}">
         <p class="questions">WHAT WE DO ?</p>
       </div>
 
@@ -100,6 +100,7 @@
 <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/vue-prlx/dist/v-prlx.min.js"></script>
 <script>
+import { mapState } from "vuex";
 import Navbar from "./nav.vue";
 import Vue from "vue"
 import VuePrlx from 'vue-prlx'
@@ -111,9 +112,21 @@ export default {
       navToggled: false,
     }
   },
+
   components: {
     Navbar
   },
+
+  computed: {
+    ...mapState ({
+      banners: state => state.image.home_banners
+    })
+  },
+
+  mounted() {
+    this.$store.dispatch('image/getHomeBanner')
+  },
+
   methods: {
     toggleNav: function () {
       this.navToggled = !this.navToggled
@@ -137,7 +150,7 @@ export default {
 }
 
 .image-size {
-  background-image: url('../../assets/images/Home/1.jpg');
+  /* background-image: url('../../assets/images/Home/1.jpg'); */
   width: 100vw;
   height: 90vh;
   position: relative;
@@ -148,7 +161,7 @@ export default {
 .bg-love {
     width: 100%;
     height: 36vh;
-    background: url('../../assets/images/Home/2.jpg') fixed center top no-repeat;
+    background: fixed center top no-repeat;
     background-size: cover;
     
 }
@@ -156,14 +169,14 @@ export default {
 .bg-belive {
   width: 100%;
   height: 36vh;
-  background: url('../../assets/images/Home/3.jpg') fixed center top no-repeat;
+  background: fixed center top no-repeat;
   background-size: cover;
 }
 
 .bg-do {
   width: 100%;
   height: 36vh;
-  background: url('../../assets/images/Home/4.jpg') fixed center top no-repeat;
+  background: fixed center top no-repeat;
   background-size: cover;
 }
 
