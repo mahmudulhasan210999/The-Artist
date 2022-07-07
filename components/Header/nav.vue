@@ -9,16 +9,16 @@
         <nuxt-link class="font-medium" :to="'/'">HOME</nuxt-link>
       </div>
       <div class="mt-4">
-        <nuxt-link class="font-medium" :to="'/Packages'">PACKAGES</nuxt-link>
+        <nuxt-link class="font-medium" :to="'/packages'">PACKAGES</nuxt-link>
       </div>
       <div class="mt-4">
-        <nuxt-link class="font-medium" :to="'/Images'">IMAGES</nuxt-link>
+        <nuxt-link class="font-medium" :to="'/images'">IMAGES</nuxt-link>
       </div>
       <div class="mt-4">
-        <nuxt-link class="font-medium" :to="'/Films'">FILMS</nuxt-link>
+        <nuxt-link class="font-medium" :to="'/films'">FILMS</nuxt-link>
       </div>
       <div class="mt-4">
-        <nuxt-link class="font-medium" :to="'/Contact'">CONTACT</nuxt-link>
+        <nuxt-link class="font-medium" :to="'/contact'">CONTACT</nuxt-link>
       </div>
     </div>
   </div>

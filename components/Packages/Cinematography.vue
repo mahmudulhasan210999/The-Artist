@@ -35,7 +35,11 @@ export default {
     ...mapState ({
       videos: state => state.package.videos
     })
-  }
+  },
+
+  mounted() {
+    this.$store.dispatch('package/getVideos');
+  },
 }
 </script>
 

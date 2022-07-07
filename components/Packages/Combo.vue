@@ -35,7 +35,11 @@ export default {
     ...mapState ({
       combos: state => state.package.combos
     })
-  }
+  },
+
+  mounted() {
+    this.$store.dispatch('package/getCombos');
+  },
 }
 </script>
 

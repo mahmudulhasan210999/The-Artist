@@ -35,7 +35,11 @@ export default {
     ...mapState ({
       photos: state => state.package.photos
     })
-  }
+  },
+
+  mounted() {
+    this.$store.dispatch('package/getPhotos');
+  },
 }
 </script>
 

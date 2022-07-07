@@ -3,19 +3,19 @@
     <!-- main header -->
     <div class="hidden md:flex justify-between h-36 p-2 md:mx-10 lg:mx-36 xl:mx-64">
       <div class="pt-6">
-        <nuxt-link class="hover:text-red-400" :to="'/Packages'">PACKAGES</nuxt-link>
+        <nuxt-link class="hover:text-red-400" :to="'/packages'">PACKAGES</nuxt-link>
       </div>
       <div class="pt-6">
-        <nuxt-link class="hover:text-red-400" :to="'/Images'">IMAGES</nuxt-link>
+        <nuxt-link class="hover:text-red-400" :to="'/images'">IMAGES</nuxt-link>
       </div>
       <div class="flex items-center">
         <nuxt-link class="" :to="'/'"><img class="h-20 w-52 lg:h-24 lg:w-60 xl:h-32 xl:w-80" src="../../assets/images/Header/header2.png" alt="HOME"></nuxt-link>
       </div>
       <div class="pt-6">
-        <nuxt-link class="hover:text-red-400" :to="'/Films'">FILMS</nuxt-link>
+        <nuxt-link class="hover:text-red-400" :to="'/films'">FILMS</nuxt-link>
       </div>
       <div class="pt-6">
-        <nuxt-link class="hover:text-red-400" :to="'/Contact'">CONTACT</nuxt-link>
+        <nuxt-link class="hover:text-red-400" :to="'/contact'">CONTACT</nuxt-link>
       </div>
     </div>
 
