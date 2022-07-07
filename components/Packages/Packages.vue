@@ -24,7 +24,7 @@
               <template #item="slotProps">
                 <div class="p-3 xl:p-4 w-full h-full">
                   <nuxt-link :to="{ path: '/packages/photography/' + slotProps.data.slug, params: { id: slotProps.data }}">
-                    <img class="" :src="slotProps.data.img" alt="Image">
+                    <img class="" :src="host + slotProps.data.img" alt="Image">
                     <div class="text-center">
                       <p class="p-1 font-medium">{{ slotProps.data.package_name }}</p>
                       <p class="font-medium">Price: {{ slotProps.data.price }} BDT</p>
@@ -43,7 +43,7 @@
               <template #item="slotProps">
                 <div class="p-3 xl:p-4 w-full h-full">
                   <nuxt-link :to="{ path: '/packages/cinematography/' + slotProps.data.slug, params: { id: slotProps.data }}">
-                    <img class="" :src="slotProps.data.img" alt="Image">
+                    <img class="" :src="host + slotProps.data.img" alt="Image">
                     <div class="text-center">
                       <p class="p-1 font-medium">{{ slotProps.data.package_name }}</p>
                       <p class="font-medium">Price: {{ slotProps.data.price }} BDT</p>
@@ -62,7 +62,7 @@
               <template #item="slotProps">
                 <div class="p-3 xl:p-4 w-full h-full">
                   <nuxt-link :to="{ path: '/packages/combo/' + slotProps.data.slug, params: { id: slotProps.data }}">
-                    <img class="" :src="slotProps.data.img" alt="Image">
+                    <img class="" :src="host + slotProps.data.img" alt="Image">
                     <div class="text-center">
                       <p class="p-1 font-medium">{{ slotProps.data.package_name }}</p>
                       <p class="font-medium">Price: {{ slotProps.data.price }} BDT</p>
@@ -124,8 +124,6 @@
         </div>
       </div>
     </div>
-
-
 
     <!-- top design for REVIEWS -->
     <div class="px-20 md:px-44 lg:px-64 xl:px-80 mb-3">
@@ -192,9 +190,7 @@ export default {
       photographyDetails: true,
       videoDetails: false,
       comboDetails: false,
-
       potoDetails: false,
-
       termsAndConditions: false,
     }
   },
@@ -226,22 +222,18 @@ export default {
 
   computed: {
     ...mapState ({
-      photos: state => state.package.photos
-    }),
-    ...mapState ({
-      videos: state => state.package.videos
-    }),
-    ...mapState ({
-      combos: state => state.package.combos
-    }),
-
-    ...mapState ({
-      reviews: state => state.review.reviews
+      photos: state => state.package.photos,
+      videos: state => state.package.videos,
+      combos: state => state.package.combos,
+      reviews: state => state.review.reviews,
     }),
   },
 
   mounted() {
-    this.$store.dispatch('review/getReviews')
+    this.$store.dispatch('package/getPhotos');
+    this.$store.dispatch('package/getVideos');
+    this.$store.dispatch('package/getCombos');
+    this.$store.dispatch('review/getReviews');
   },
 }
 </script>

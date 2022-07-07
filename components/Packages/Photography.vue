@@ -4,7 +4,7 @@
     <div v-for="(photo, index) in photos" :key="index"> 
       <div class="text-center pt-2 all" v-if="photo.slug == slug">
         <div class="px-2 md:px-5 lg:px-8">
-          <img class="" :src="photo.img" alt="">
+          <img class="" :src="host + photo.img" alt="">
         </div>
         <div class="text-center">
           <p class="text-base lg:text-xl font-medium p-1 pt-4">{{ photo.package_name }}</p>
@@ -24,6 +24,13 @@
 import { mapState } from "vuex";
 export default {
   props: ['slug'],
+
+  data() {
+    return {
+      host: "https://theartistapi.bitflex.xyz"
+    }
+  },
+  
   computed: {
     ...mapState ({
       photos: state => state.package.photos

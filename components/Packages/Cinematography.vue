@@ -4,7 +4,7 @@
     <div v-for="(video, index) in videos" :key="index">
       <div class="text-center pt-2 all" v-if="video.slug == slug">
         <div class="px-2 md:px-5 lg:px-8">
-          <img class="" :src="video.img" alt="">
+          <img class="" :src="host + video.img" alt="">
         </div>  
         <div class="text-center">
           <p class="text-base lg:text-xl font-medium p-1 pt-4">{{ video.package_name }}</p>
@@ -24,6 +24,13 @@
 import { mapState } from "vuex";
 export default {
   props: ['slug'],
+
+  data() {
+    return {
+      host: "https://theartistapi.bitflex.xyz"
+    }
+  },
+
   computed: {
     ...mapState ({
       videos: state => state.package.videos

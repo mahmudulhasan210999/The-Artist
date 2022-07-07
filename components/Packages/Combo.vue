@@ -4,7 +4,7 @@
     <div v-for="(combo, index) in combos" :key="index"> 
       <div class="text-center pt-2 all" v-if="combo.slug == slug">
         <div class="px-2 md:px-5 lg:px-8">
-          <img class="" :src="combo.img" alt="">
+          <img class="" :src="host + combo.img" alt="">
         </div>
         <div class="text-center">
           <p class="text-base lg:text-xl font-medium p-1 pt-4">{{ combo.package_name }}</p>
@@ -24,6 +24,13 @@
 import { mapState } from "vuex";
 export default {
   props: ['slug'],
+
+  data() {
+    return {
+      host: "https://theartistapi.bitflex.xyz"
+    }
+  },
+
   computed: {
     ...mapState ({
       combos: state => state.package.combos
