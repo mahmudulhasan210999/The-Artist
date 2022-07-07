@@ -1,6 +1,6 @@
 <template>
   <div class="bg-orange-50 w-full p-2">
-
+    <Toast :breakpoints="{'640px': {width: '100%', right: '0', left: '0'}}" />
     <!-- top design for CONTACT US -->
     <div class="px-20 md:px-44 lg:px-64 xl:px-80 mb-3">
       <p class="border-t-2 border-gray-400 pt-2 md:pt-3 lg:pt-4"></p>
@@ -101,12 +101,14 @@ import { mapState } from "vuex";
 import InputText from 'primevue/inputtext';
 import Textarea from 'primevue/textarea';
 import Button from 'primevue/button';
+import Toast from 'primevue/toast';
 
 export default {
   components: {
     InputText,
     Textarea,
     Button,
+    Toast
   },
 
   data() {
@@ -130,8 +132,16 @@ export default {
 
   methods: {
     submitDetails() {
-      this.$store.dispatch("saveDetails", this.temp_details);
+      this.$store.dispatch("contact/saveDetails", this.temp_details).then(code => {
+        console.log(code)
+        if(code == 200) {
+        this.$toast.add({severity:'success', summary: 'Success!', detail:'Contact request sent successfully.', life: 5000});
+      } else {
+        this.$toast.add({severity:'error', summary: 'Error!', detail:'Please try again later', life: 5000});
+      }
+      });
       this.temp_details = {};
+  
     }
   },
 

@@ -35,7 +35,7 @@ export const actions = {
   getHomeBanner({ commit }) {
     axios.get(PAPI.get_home_banners).then(result => {
       let results = result.data
-      console.log(result.data)
+      // console.log(result.data)
       commit('SET_BANNER_IMAGES', results)
     })
     .catch(error => {

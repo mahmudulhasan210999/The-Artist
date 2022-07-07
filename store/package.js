@@ -28,7 +28,7 @@ export const actions = {
   getPhotos ({ commit }) {
     axios.get(PAPI.get_photo).then(result => {
       let results = result.data
-      console.log(result.data)
+      // console.log(result.data)
       commit('SET_PHOTOS', results)
     })
     .catch(error => {
@@ -39,7 +39,7 @@ export const actions = {
   getVideos ({ commit }) {
     axios.get(PAPI.get_video).then(result => {
       let results = result.data
-      console.log(result.data)
+      // console.log(result.data)
       commit('SET_VIDEOS', results)
     })
     .catch(error => {
@@ -50,7 +50,7 @@ export const actions = {
   getCombos ({ commit }) {
     axios.get(PAPI.get_combo).then(result => {
       let results = result.data
-      console.log(result.data)
+      // console.log(result.data)
       commit('SET_COMBOS', results)
     })
     .catch(error => {

@@ -1,4 +1,5 @@
 export default {
+  // target: 'static',
   // Global page headers: https://go.nuxtjs.dev/config-head
   head: {
     title: 'The Artist',
@@ -16,7 +17,8 @@ export default {
 
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
   plugins: [
-    '~/plugins/vprlx.js'
+    '~/plugins/vprlx.js',
+    '~/plugins/prime-toast.js'
   ],
 
   // Auto import components: https://go.nuxtjs.dev/config-components
