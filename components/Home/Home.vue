@@ -12,7 +12,9 @@
             <nuxt-link class="text-white" :to="'/images'">IMAGES</nuxt-link>
           </div>
           <div class="flex items-center">
-            <nuxt-link class="text-lg font-medium" :to="'/'"><img class="h-20 w-52 lg:h-24 lg:w-60 xl:h-32 xl:w-80" src="../../assets/images/Header/header1.png" alt="HOME"></nuxt-link>
+            <nuxt-link class="text-lg font-medium" :to="'/'">
+              <img class="h-20 w-52 lg:h-24 lg:w-60 xl:h-32 xl:w-80" src="../../assets/images/Header/header1.png" alt="HOME">
+            </nuxt-link>
           </div>
           <div class="pt-6">
             <nuxt-link class="text-white" :to="'/films'">FILMS</nuxt-link>
