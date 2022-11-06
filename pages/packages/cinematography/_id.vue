@@ -1,9 +1,9 @@
 <template>
-  <div>
-    <Header />
-    <Details :slug="getDetails()" />
-    <Footer />
-  </div>
+    <div>
+        <Header />
+        <Details :slug="getDetails()" />
+        <Footer />
+    </div>
 </template>
 
 <script>
@@ -12,17 +12,17 @@ import Details from '../../../components/Packages/Cinematography.vue'
 import Footer from '../../../components/Footer/Footer.vue'
 
 export default {
-  // props: ['detail'],
+    // props: ['detail'],
 
-  components: {
-    Header,
-    Details,
-    Footer
-  },
-  methods: {
-    getDetails() {
-      return this.$route.params.id
-    }
-  },
+    components: {
+        Header,
+        Details,
+        Footer
+    },
+    methods: {
+        getDetails() {
+        return this.$route.params.id
+        }
+    },
 }
 </script>

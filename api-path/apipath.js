@@ -1,4 +1,4 @@
-var host = "https://theartistapi.bitflex.xyz";
+var host = "https://api.theartist.com.bd";
 
 const PAPI = {
     'get_photo': host + '/api/packages/photos',

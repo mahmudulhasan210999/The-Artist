@@ -1,9 +1,9 @@
 <template>
-  <div>
-    <Header />
-    <Contact />
-    <Footer />
-  </div>
+    <div>
+        <Header />
+        <Contact />
+        <Footer />
+    </div>
 </template>
 
 <script>
@@ -12,11 +12,10 @@ import Contact from '../../components/Contact/Contact.vue'
 import Footer from '../../components/Footer/Footer.vue'
 
 export default {
-  components: {
-    Header,
-    Contact,
-    Footer
-  }
-
+    components: {
+        Header,
+        Contact,
+        Footer
+    }
 }
 </script>

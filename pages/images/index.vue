@@ -1,9 +1,9 @@
 <template>
-  <div>
-    <Header />
-    <Images />
-    <Footer />
-  </div>
+    <div>
+        <Header />
+        <Images />
+        <Footer />
+    </div>
 </template>
 
 <script>
@@ -12,11 +12,10 @@ import Images from '../../components/Images/Images.vue'
 import Footer from '../../components/Footer/Footer.vue'
 
 export default {
-  components: {
-    Header,
-    Images,
-    Footer
-  }
-
+    components: {
+        Header,
+        Images,
+        Footer
+    }
 }
 </script>

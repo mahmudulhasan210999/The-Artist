@@ -1,9 +1,9 @@
 <template>
-  <div>
-    <Header />
-    <Films />
-    <Footer />
-  </div>
+    <div>
+        <Header />
+        <Films />
+        <Footer />
+    </div>
 </template>
 
 <script>
@@ -12,11 +12,10 @@ import Films from '../../components/Films/Films.vue'
 import Footer from '../../components/Footer/Footer.vue'
 
 export default {
-  components: {
-    Header,
-    Films,
-    Footer
-  }
-
+    components: {
+        Header,
+        Films,
+        Footer
+    }
 }
 </script>
